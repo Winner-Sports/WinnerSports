@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Admin Dashboard
+//login
 Route::get('/', function () {
+    return view('login');
+});
+
+
+//Admin Dashboard
+Route::get('/admin', function () {
     return view('adminboard');
 });
