@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 //login
 Route::get('/', function () {
     return view('login');
@@ -22,4 +22,15 @@ Route::get('/', function () {
 //Admin Dashboard
 Route::get('/admin', function () {
     return view('adminboard');
+});
+
+//Invoice 
+Route::get('/invoice', function () {
+    return view('invoice');
+});
+
+Route::post('/save-invoice', [InvoiceController::class,'saveInvoice'] )->name('save.invoice');
+
+Route::get('/invpdf', function () {
+    return view('invpdf');
 });
